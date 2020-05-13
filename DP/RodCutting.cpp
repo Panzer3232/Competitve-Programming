@@ -27,7 +27,10 @@
         for(auto i=0;i<n;i++){
             cin>>len[i];
         }
-         int val[] = {1, 5, 8, 9, 10, 17, 17, 20}; 
+         int val[n];
+         for(auto i=0;i<n;i++){
+            cin>>val[i];
+        }
         int size = sizeof(val)/sizeof(val[0]);
         cout << rodCutting(len,val,size,n);
         return 0;
