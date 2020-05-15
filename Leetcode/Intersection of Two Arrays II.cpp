@@ -19,3 +19,18 @@ What if the given array is already sorted? How would you optimize your algorithm
 What if nums1's size is small compared to nums2's size? Which algorithm is better?
 What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
 */
+class Solution {
+public:
+    vector<int> intersect(vector<int>& num1, vector<int>& num2) {
+        vector<int> p;
+        unordered_map<int,int> obj;
+        for(const auto& num: num1){
+            obj[num]++;
+        }
+         for(const auto& num: num2){
+            obj[num]--;
+             if(obj[num]>=0) p.push_back(num);
+        }
+        return p;
+    }
+};
