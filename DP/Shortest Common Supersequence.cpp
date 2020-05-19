@@ -1,9 +1,9 @@
 /*
 Input:   str1 = "geek",  str2 = "eke"
-Output: "geeke"
+Output: 5 ("geeke")
 
 Input:   str1 = "AGGTAB",  str2 = "GXTXAYB"
-Output:  "AGXGTXAYB"
+Output:  9 ("AGXGTXAYB")
 */
 #include<bits/stdc++.h>
 using namespace std; 
