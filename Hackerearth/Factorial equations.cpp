@@ -24,7 +24,7 @@ Memory Limit:	256 MB
 Source Limit:	1024 KB
 */
 
-/*this solution online gave me 57 marks out of 100 so not  a good solution
+/*this solution online gave me 57 marks out of 100 so not  a good solution*/
 #include<bits/stdc++.h>
 using namespace std;
  
