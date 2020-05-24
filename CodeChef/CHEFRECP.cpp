@@ -33,3 +33,46 @@ Example case 1: For each ingredient type, its ingredient jar is used only once a
 
 Example case 2: The jar of ingredient 4 is used twice in the recipe, so it was not prepared by Chef.
 */
+#include<bits/stdc++.h>
+
+using namespace std;
+
+#define ll long long
+
+int main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+// 	freopen("input.txt", "r", stdin);
+	ll t; cin>>t;
+	while(t--){
+		ll n; cin>>n;
+		vector<ll> arr(n);
+		for(ll i=0;i<n;i++) cin>>arr[i];
+		set<ll> usedIng;
+		set<ll> freq;
+
+		bool flag = true;
+		for(ll i=0;i<n;){
+			ll ing = arr[i];
+			if(usedIng.find(ing)!=usedIng.end()){
+				flag=false;
+				break;
+			}
+			ll count = 0;
+			while(arr[i]==ing){
+				count++;
+				i++;
+			}
+			if(freq.find(count)!=freq.end()){
+				flag=false;
+				break;
+			}
+			freq.insert(count);
+			usedIng.insert(ing);
+			//cout<<ing<<" "<<count<<endl;
+		}
+		if(flag) cout<<"YES\n";
+		else cout<<"NO\n";
+	}
+	return 0;
+}
