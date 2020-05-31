@@ -56,98 +56,98 @@ Example case 2: We can see that it is impossible to convert A to B since c is al
 
 Example case 3: We can see again that it is impossible to convert A to B since c cannot be 'c'.
 */
-        #include<bits/stdc++.h>
-        using namespace std;
-         
-        #pragma GCC push_options
-        #pragma GCC optimize ("unroll-loops")
-         
-        #define watch(x) cout << (#x) << " is " << (x) << "\n"
-        #define watch2(x,y) cout <<(#x)<<" is "<<(x)<<" and "<<(#y)<<" is "<<(y)<<"\n"
-         
-        #define pow2(x) ((x)*(x))
-        #define ll long long
-        #define ld long double
-        #define eb emplace_back
-        #define pb push_back
-        #define pf push_front
-         
-        #define mod 1000000007
-        #define clock (clock() * 1000.0 / CLOCKS_PER_SEC)
-         
-        #define mp make_pair
-        #define ff first
-        #define ss second
-        #define null NULL
-         
-        #define all(c) (c).begin(),(c).end()
-        #define nl "\n"
-        #define SZ(x) ((int)x.size())
-         
-        typedef vector<ll> vl;
-        typedef vector< vl > vvl;
-        typedef pair< ll,ll> pll;
-        typedef map< ll,ll> mll;
-            ll n;
-            string a;
-            string b;
-            void read(){
-                cin>>n;
-            cin>>a;
-            cin>>b;
-            }
-         void solve(){
-              vector<vector<int> > ans;
-            for(auto i=0;i<n;i++){
-                if(a[i]<b[i]){
-                cout<<-1<<" ";cout<<nl;
-                return;
-            }
-            }
-            for(char c='z';c>='a';c--){
-                vector<int>pos;
-                bool ok=false;
-                for(auto i=0;i<n;i++){
-                if(b[i]==c && a[i]!=c)
-                    pos.pb(i);
-                }
-                if(!ok && !pos.empty()){
-                    for(auto i=0;i<n;i++){
-                        if(a[i]==c){
-                            pos.pb(i);
-                             ok=true;
-                        }
+               #include<bits/stdc++.h>
+                using namespace std;
+
+                #pragma GCC push_options
+                #pragma GCC optimize ("unroll-loops")
+
+                #define watch(x) cout << (#x) << " is " << (x) << "\n"
+                #define watch2(x,y) cout <<(#x)<<" is "<<(x)<<" and "<<(#y)<<" is "<<(y)<<"\n"
+
+                #define pow2(x) ((x)*(x))
+                #define ll long long
+                #define ld long double
+                #define eb emplace_back
+                #define pb push_back
+                #define pf push_front
+
+                #define mod 1000000007
+                #define clock (clock() * 1000.0 / CLOCKS_PER_SEC)
+
+                #define mp make_pair
+                #define ff first
+                #define ss second
+                #define null NULL
+
+                #define all(c) (c).begin(),(c).end()
+                #define nl "\n"
+                #define SZ(x) ((int)x.size())
+
+                typedef vector<ll> vl;
+                typedef vector< vl > vvl;
+                typedef pair< ll,ll> pll;
+                typedef map< ll,ll> mll;
+                    ll n;
+                    string a;
+                    string b;
+                    void read(){
+                        cin>>n;
+                    cin>>a;
+                    cin>>b;
                     }
+                 void solve(){
+                      vector<vector<int> > ans;
+                    for(auto i=0;i<n;i++){
+                        if(a[i]<b[i]){
+                        cout<<-1<<" ";cout<<nl;
+                        return;
+                    }
+                    }
+                    for(char c='z';c>='a';c--){
+                        vector<int>pos;
+                        bool ok=false;
+                        for(auto i=0;i<n;i++){
+                        if(b[i]==c && a[i]!=c)
+                            pos.pb(i);
+                        }
+                        if(!ok && !pos.empty()){
+                            for(auto i=0;i<n;i++){
+                                if(a[i]==c){
+                                    pos.pb(i);
+                                     ok=true;
+                                }
+                            }
+                        }
+                        if(!ok && !pos.empty()){
+                            cout<<-1<<" ";
+                            cout<<nl;
+                            return;
+                        }
+                        if(!pos.empty()) ans.pb(pos);
+                        for(int i: pos) {
+                                        a[i] = c;
+                                }
+                    }
+                    cout<<SZ(ans)<<endl;
+                    for(auto li: ans) {
+                                cout << SZ(li) << " ";
+                                for(int x: li) cout << x << " ";
+                                cout << endl;
+                        }
                 }
-                if(!ok && !pos.empty()){
-                    cout<<-1<<" ";
-                    cout<<nl;
-                    return;
+                int main()
+                {
+                    ios_base::sync_with_stdio(false);
+                    cin.tie(0);
+                    cout.tie(0);
+
+                    ll t;
+                    cin >> t;
+                    while(t--)
+                    {
+                    read();
+                    solve();
+                    }
+                    return 0;
                 }
-                if(!pos.empty()) ans.pb(pos);
-                for(int i: pos) {
-        			a[i] = c;
-        		}
-            }
-            cout<<SZ(ans)<<endl;
-            for(auto li: ans) {
-        		cout << SZ(li) << " ";
-        		for(int x: li) cout << x << " ";
-        		cout << endl;
-        	}
-        }
-        int main()
-        {
-            ios_base::sync_with_stdio(false);
-            cin.tie(0);
-            cout.tie(0);
-         
-            ll t;
-            cin >> t;
-            while(t--)
-            {
-            read();
-            solve();
-            }
-            return 0;
-        }
