@@ -51,3 +51,41 @@ Then, Alice walks with speed 3 and Bob walks with speed 2, so they do not walk s
 Although Alice and Bob both end up at X=5 at the end of the 2-nd second, the weird distance is 0.
 Example case 3: We can see that Alice and Bob always walk together, so the weird distance is 3+3=6.
 */
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+ 
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+ 
+    ll t;
+    cin >> t;
+    while(t--)
+    {
+    ll n;
+    cin>>n;
+    ll a[n];
+    ll b[n];
+    ll sum=0,posA=0,posB=0;
+    for(auto i=0;i<n;i++){
+        cin>>a[i];
+    }
+    for(auto i=0;i<n;i++){
+        cin>>b[i];
+    }
+    for(auto i=0;i<n;i++){
+        if(a[i]==b[i] && posA==posB){
+            sum+=a[i];
+        }
+        posA+=a[i];
+        posB+=b[i];
+    }
+    cout<<sum<<" ";
+    cout<<"\n";
+}
+
+    return 0;
+}
