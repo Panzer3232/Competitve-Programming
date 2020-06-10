@@ -27,3 +27,18 @@ Constraints:
 0 <= t.length <= 10^4
 Both strings consists only of lowercase characters.
 */
+class Solution {
+public:
+   bool isSubsequenceisUtil(string str1, string str2,int m,int n){
+    int j = 0; 
+   for (int i=0; i<n&&j<m; i++) 
+       if (str1[j] == str2[i]) 
+         j++; 
+   return (j==m); 
+   }
+    bool isSubsequence(string s, string t) {
+        int m=s.length();
+        int n=t.length();
+     return isSubsequenceisUtil(s,t,m,n);
+    }
+};
