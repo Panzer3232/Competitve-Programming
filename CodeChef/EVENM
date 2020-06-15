@@ -31,4 +31,40 @@ Explanation
 Example case 1: The matrix M has five square submatrices. Four of them ([1], [2], [4], [3]) have a=0, so they obviously satisfy all conditions. The last square submatrix is the whole matrix M, with r=c=a=1, and we can see that M1,1+M2,2=1+3=4 and M1,2+M2,1=2+4=6 are both even.
 */
 
+#include <bits/stdc++.h>
 
+using namespace std;
+
+#define ll long long
+#define pb push_back
+
+int main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+// 	freopen("input.txt", "r", stdin);
+	ll t; cin>>t;
+	while(t--){
+		ll n; cin>>n;
+		int val=1;
+		int order=0;
+		for(int i=0;i<n;i++){
+			if(order%2==0){
+				for(int j=0;j<n;j++){
+					cout<<val<<" ";
+					val++;
+				}
+			}
+			else{
+				val+=n-1;
+				for(int j=0;j<n;j++){
+					cout<<val<<" ";
+					val--;
+				}
+				val+=n+1;
+			}
+			order++;
+			cout<<"\n";	
+		}
+	}
+	return 0;
+}
