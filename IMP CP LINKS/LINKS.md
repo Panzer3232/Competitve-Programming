@@ -2,6 +2,6 @@
  
 ## [Binary Search for Beginners ](https://leetcode.com/discuss/general-discussion/691825/binary-search-for-beginners-problems-patterns-sample-solutions)
 ## [DP Patterns ](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns%3E)
-## [Binary Search for Beginners ](https://leetcode.com/discuss/general-discussion/691825/binary-search-for-beginners-problems-patterns-sample-solutions)
-## [Binary Search for Beginners ](https://leetcode.com/discuss/general-discussion/691825/binary-search-for-beginners-problems-patterns-sample-solutions)
-## [Binary Search for Beginners ](https://leetcode.com/discuss/general-discussion/691825/binary-search-for-beginners-problems-patterns-sample-solutions)
+## [Graph for Beginners ](https://leetcode.com/discuss/general-discussion/655708/graph-for-beginners-problems-pattern-sample-solutions/562734)
+## [Binary Search for Beginners Problems ](https://leetcode.com/discuss/general-discussion/691825/binary-search-for-beginners-problems-patterns-sample-solutions)
+## [How to use Bit manipulation ](https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary%3A-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently)
