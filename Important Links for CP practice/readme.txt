@@ -1,5 +1,0 @@
-# Important competetive Programming List
-
-
-
-
