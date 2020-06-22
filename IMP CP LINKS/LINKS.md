@@ -8,4 +8,4 @@
 ## [Greedy for beginners ](https://leetcode.com/discuss/general-discussion/669996/greedy-for-beginners-problems-sample-solutions)
 ## [System Design Template](https://leetcode.com/discuss/career/229177/my-system-design-template)
 ## [Article on Trie](https://leetcode.com/discuss/general-discussion/680706/Article-on-Trie.-General-Template-and-List-of-problems)
-
+## [STL C++](https://www.hackerearth.com/practice/notes/standard-template-library/)
