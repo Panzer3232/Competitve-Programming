@@ -11,4 +11,5 @@
 ## [STL C++](https://www.hackerearth.com/practice/notes/standard-template-library/)
 ## [Fenwick Tree](https://www.hackerearth.com/practice/notes/binary-indexed-tree-or-fenwick-tree/#c217533)
 ## [Interview Preperation Beginner (complete)](https://leetcode.com/discuss/general-discussion/698684/interview-preparation-for-beginners-ds-algorithms-os-system-design)
-## [Interview Preperation 2](https://teachyourselfcs.com/)                                           
+## [Interview Preperation 2](https://teachyourselfcs.com/)    
+## [Leetcode Practice](https://seanprashad.com/leetcode-patterns/) 
