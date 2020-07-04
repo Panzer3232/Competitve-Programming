@@ -13,3 +13,6 @@
 ## [Interview Preperation Beginner (complete)](https://leetcode.com/discuss/general-discussion/698684/interview-preparation-for-beginners-ds-algorithms-os-system-design)
 ## [Interview Preperation 2](https://teachyourselfcs.com/)    
 ## [Leetcode Practice](https://seanprashad.com/leetcode-patterns/) 
+
+# Youtube Channel which greatly help me :-
+## [DP Tutorial](https://www.youtube.com/playlist?list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go)
