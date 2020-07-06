@@ -10,6 +10,7 @@
 ## [Article on Trie](https://leetcode.com/discuss/general-discussion/680706/Article-on-Trie.-General-Template-and-List-of-problems)
 ## [STL C++](https://www.hackerearth.com/practice/notes/standard-template-library/)
 ## [Fenwick Tree](https://www.hackerearth.com/practice/notes/binary-indexed-tree-or-fenwick-tree/#c217533)
+## [Segment Tree](https://www.hackerearth.com/practice/notes/segment-tree-and-lazy-propagation/)
 ## [Interview Preperation Beginner (complete)](https://leetcode.com/discuss/general-discussion/698684/interview-preparation-for-beginners-ds-algorithms-os-system-design)
 ## [Interview Preperation 2](https://teachyourselfcs.com/)    
 ## [Leetcode Practice](https://seanprashad.com/leetcode-patterns/) 
