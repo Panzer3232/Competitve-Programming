@@ -1,88 +1,88 @@
-#include<bits/stdc++.h>
-using namespace std;
- 
-#pragma GCC push_options
-#pragma GCC optimize ("unroll-loops")
- 
-#define watch(x) cout << (#x) << " is " << (x) << "\n"
-#define watch2(x,y) cout <<(#x)<<" is "<<(x)<<" and "<<(#y)<<" is "<<(y)<<"\n"
-#define MAX 100000
-#define pow2(x) ((x)*(x))
-#define ll long long
-#define ld long double
-#define eb emplace_back
-#define pb push_back
-#define pf push_front
- 
-#define mod 1000000007
-#define INF 1000000000
-#define clock (clock() * 1000.0 / CLOCKS_PER_SEC)
- 
-#define mp make_pair
-#define ff first
-#define ss second
-#define null NULL
- 
-#define all(c) (c).begin(),(c).end()
-#define nl "\n"
- 
-typedef vector<ll> vl;
-typedef vector< vl > vvl;
-typedef pair< ll,ll> pll;
-typedef map< ll,ll> mll;
-int st[400001] , arr[100001];
+	#include<bits/stdc++.h>
+	using namespace std;
 
-void build(int si,int ss,int se){
-    if(ss==se){
-        st[si]=arr[ss];
-        return;
-    }
-    int mid=(ss+se)/2;
-    build(2*si,ss,mid);
-    build(2*si+1,mid+1,se);
-    st[si]= min(st[2*si],st[2*si+1]);
-}
+	#pragma GCC push_options
+	#pragma GCC optimize ("unroll-loops")
 
-int query(int si,int ss,int se, int qs,int qe){
-    if(qs>se || qe<ss)
-    return INF;
-    if(ss>=qs && se<=qe){
-        return st[si];
-    }
-    int mid=(ss+se)/2;
-    int l=query(2*si,ss,mid,qs,qe);
-    int R=query(2*si+1,mid+1,se,qs,qe);
-    
-    return min(l,R);
-}
-void update(int si,int ss,int se,int qi){
-    if(ss == se){
-        st[si]=arr[ss];
-        return;
-    }
-    int mid=(ss+se)/2;
-    if(qi<=mid)
-    update(2*si,ss,mid,qi);
-    else
-    update(2*si+1,mid+1,se,qi);
-    st[si]=min(st[2*si],st[2*si+1]);
-}
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-	int n , q , l , r;
-	cin>>n;
-	for(auto i=1;i<=n;i++){
-	    cin>>arr[i];
+	#define watch(x) cout << (#x) << " is " << (x) << "\n"
+	#define watch2(x,y) cout <<(#x)<<" is "<<(x)<<" and "<<(#y)<<" is "<<(y)<<"\n"
+	#define MAX 100000
+	#define pow2(x) ((x)*(x))
+	#define ll long long
+	#define ld long double
+	#define eb emplace_back
+	#define pb push_back
+	#define pf push_front
+
+	#define mod 1000000007
+	#define INF 1000000000
+	#define clock (clock() * 1000.0 / CLOCKS_PER_SEC)
+
+	#define mp make_pair
+	#define ff first
+	#define ss second
+	#define null NULL
+
+	#define all(c) (c).begin(),(c).end()
+	#define nl "\n"
+
+	typedef vector<ll> vl;
+	typedef vector< vl > vvl;
+	typedef pair< ll,ll> pll;
+	typedef map< ll,ll> mll;
+	int st[400001] , arr[100001];
+
+	void build(int si,int ss,int se){
+	    if(ss==se){
+		st[si]=arr[ss];
+		return;
+	    }
+	    int mid=(ss+se)/2;
+	    build(2*si,ss,mid);
+	    build(2*si+1,mid+1,se);
+	    st[si]= min(st[2*si],st[2*si+1]);
 	}
-	cin>>q;
-	build(1 , 1 , n);
-	while(q--)
+
+	int query(int si,int ss,int se, int qs,int qe){
+	    if(qs>se || qe<ss)
+	    return INF;
+	    if(ss>=qs && se<=qe){
+		return st[si];
+	    }
+	    int mid=(ss+se)/2;
+	    int l=query(2*si,ss,mid,qs,qe);
+	    int R=query(2*si+1,mid+1,se,qs,qe);
+
+	    return min(l,R);
+	}
+	void update(int si,int ss,int se,int qi){
+	    if(ss == se){
+		st[si]=arr[ss];
+		return;
+	    }
+	    int mid=(ss+se)/2;
+	    if(qi<=mid)
+	    update(2*si,ss,mid,qi);
+	    else
+	    update(2*si+1,mid+1,se,qi);
+	    st[si]=min(st[2*si],st[2*si+1]);
+	}
+	int main()
 	{
-		cin>>l>>r;
-		cout<<query(1 , 1 , n , l+1 , r+1)<<nl;
+	    ios_base::sync_with_stdio(false);
+	    cin.tie(0);
+	    cout.tie(0);
+		int n , q , l , r;
+		cin>>n;
+		for(auto i=1;i<=n;i++){
+		    cin>>arr[i];
+		}
+		cin>>q;
+		build(1 , 1 , n);
+		while(q--)
+		{
+			cin>>l>>r;
+			cout<<query(1 , 1 , n , l+1 , r+1)<<nl;
+		}
+	    return 0;
 	}
-    return 0;
-}
