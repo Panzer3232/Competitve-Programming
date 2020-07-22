@@ -79,3 +79,110 @@ Chef’s card has power 3,
 Morty’s card has power 4.
 Therefore, Morty wins the round.
 */
+
+#include<bits/stdc++.h>
+using namespace std;
+ 
+#pragma GCC push_options
+#pragma GCC optimize ("unroll-loops")
+ 
+#define watch(x) cout << (#x) << " is " << (x) << "\n"
+#define watch2(x,y) cout <<(#x)<<" is "<<(x)<<" and "<<(#y)<<" is "<<(y)<<"\n"
+#define MAX 100000
+#define pow2(x) ((x)*(x))
+#define ll long long
+#define ld long double
+#define eb emplace_back
+#define pb push_back
+#define pf push_front
+ 
+#define mod 1000000007
+#define clock (clock() * 1000.0 / CLOCKS_PER_SEC)
+ 
+#define mp make_pair
+#define ff first
+#define ss second
+#define null NULL
+ 
+#define all(c) (c).begin(),(c).end()
+#define nl "\n"
+ 
+typedef vector<ll> vl;
+typedef vector< vl > vvl;
+typedef pair< ll,ll> pll;
+typedef map< ll,ll> mll;
+
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
+  
+  ll t;
+  cin >> t;
+  
+  while(t--){
+      ll n ;
+      cin >> n;
+      multimap<int,int> ar;
+      
+      
+      while(n--){
+          ll f,s;
+          cin >> f >> s;
+          ar.insert(pair<int,int>(f,s));
+      }
+    multimap<int,int>::iterator itr;
+    
+    multimap<int,int> ar12;
+    
+    
+    for(itr = ar.begin();itr!=ar.end();++itr){
+        ll sum1=0;
+        ll sum2=0;
+        
+        ll f =itr->first;
+        while(f!=0){
+          ll p = f%10;
+          sum1+=p;
+          f=f/10;
+        }
+        ll s =itr->second;
+        while(s!=0){
+          ll h=s%10;
+          sum2+=h;
+          s=s/10;
+        }
+        ar12.insert(pair<int,int>(sum1,sum2));
+    }
+    
+    
+    ll cpt=0;
+    ll morpt=0;
+    
+    
+    for(itr=ar12.begin();itr!=ar12.end();++itr){
+      if(itr->first==itr->second){
+        
+        cpt++;
+        morpt++;
+      }
+      else if(itr->first > itr->second){
+        cpt+=1;
+      }
+      else {
+        morpt+=1;
+      }
+   }
+      if(cpt>morpt){
+       cout << "0"<<" "<<cpt<<"\n";
+      }
+      else if(cpt<morpt){
+       cout <<"1"<<" "<<morpt<<"\n";
+      }
+      else{
+       cout <<"2"<<" "<<cpt<<"\n";
+      }
+ }
+ 
+ 
+ return 0;
+}
