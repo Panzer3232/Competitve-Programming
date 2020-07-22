@@ -46,3 +46,63 @@ Chef skips 1 string to move from 3 to 5
 Chef skips 1 string to move from 5 to 7
 Therefore, the answer is 1+1+1=3
 */
+
+#include<bits/stdc++.h>
+using namespace std;
+ 
+#pragma GCC push_options
+#pragma GCC optimize ("unroll-loops")
+ 
+#define watch(x) cout << (#x) << " is " << (x) << "\n"
+#define watch2(x,y) cout <<(#x)<<" is "<<(x)<<" and "<<(#y)<<" is "<<(y)<<"\n"
+#define MAX 100000
+#define pow2(x) ((x)*(x))
+#define ll long long
+#define ld long double
+#define eb emplace_back
+#define pb push_back
+#define pf push_front
+ 
+#define mod 1000000007
+#define clock (clock() * 1000.0 / CLOCKS_PER_SEC)
+ 
+#define mp make_pair
+#define ff first
+#define ss second
+#define null NULL
+ 
+#define all(c) (c).begin(),(c).end()
+#define nl "\n"
+ 
+typedef vector<ll> vl;
+typedef vector< vl > vvl;
+typedef pair< ll,ll> pll;
+typedef map< ll,ll> mll;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    ll t;
+    cin>>t;
+    while(t--){
+        ll n;
+        cin>>n;
+        ll arr1[n];
+        for(auto i=0;i<n;i++){
+            cin>>arr1[i];
+        }
+        ll sum1=0;
+        ll i=1;
+        while(i<n){
+            sum1+= abs(arr1[i]-arr1[i-1])-1;
+            i++;
+        }
+        
+        cout<<sum1<<" ";
+        
+        cout<<nl;
+    }
+    return 0;
+}
