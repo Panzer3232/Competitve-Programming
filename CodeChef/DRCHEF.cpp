@@ -37,5 +37,118 @@ Example Output
 9
 6
 */
+#include<bits/stdc++.h>
+using namespace std;
+     
+    #pragma GCC push_options
+    #pragma GCC optimize ("unroll-loops")
+     
+    #define watch(x) cout << (#x) << " is " << (x) << "\n"
+    #define watch2(x,y) cout <<(#x)<<" is "<<(x)<<" and "<<(#y)<<" is "<<(y)<<"\n"
+    #define MAX 100000
+    #define pow2(x) ((x)*(x))
+    #define ll long long
+    #define ld long double
+    #define eb emplace_back
+    #define pb push_back
+    #define pf push_front
+    #define int      long long int
+    #define nitro    ios_base::sync_with_stdio(false),cin.tie(NULL),cout.tie(NULL);
+    #define DEBUG    falss
+    #pragma GCC optimize "trapv"
+     
+    #define mod 1000000007
+    #define clock (clock() * 1000.0 / CLOCKS_PER_SEC)
+     
+    #define mp make_pair
+    #define ff first
+    #define ss second
+    #define null NULL
+     
+    #define all(c) (c).begin(),(c).end()
+    #define nl "\n"
+     
+    typedef vector<ll> vl;
+    typedef vector< vl > vvl;
+    typedef pair< ll,ll> pll;
+    typedef map< ll,ll> mll;
 
+ 
+using namespace std;
+ 
+int32_t main()
+{
+ nitro;
+ //freopen("input.txt","r",stdin);
+ //freopen("output.txt","w",stdout);
+ int t;
+ cin>>t;
+ while(t--)
+ {
+    int n,x;
+    cin>>n>>x;
+    vector<int> v1(n);
+    
+    for(auto i=0;i<n;i++){
+        cin>>v1[i];
+    }
+    
+    
+    sort(v1.begin(),v1.end());
+    
+    vector<int>::iterator it = lower_bound(v1.begin(), v1.end(), x);
+    
+    int lowerBound = it - v1.begin();
+    
+    int s=0;
+    
+    
+    for(int i=lowerBound;i<n;i++)
+    {
+    	if(x<v1[i])
+    	{
+    		while(x<v1[i])
+    		{
+    			x=2*x;
+    			s++;
+    		}
+    		s++;
+    	}
+    	else
+    	s++;
+    	x=2*v1[i];
+    }
+    
+    
+    int total=lowerBound+s;
+    if(lowerBound!=0)
+    {
+    	s=0;
+    	lowerBound--;
+    	for(int i=lowerBound;i<n;i++)
+    	{
+    		if(x<v1[i])
+    		{
+    			while(x<v1[i])
+    			{
+    				x=2*x;
+    				s++;
+    			}
+    			s++;
+    		}
+    		else
+    		s++;
+    		x=2*v1[i];
+    	}
+    	int answer=min(s+lowerBound,total);
+    	cout<<answer<<endl;
+    }
+    
+    
+    else
+    cout<<total<<endl;
+    
+ }
+ return 0;
+}
 
