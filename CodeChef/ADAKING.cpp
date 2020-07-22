@@ -74,3 +74,80 @@ Example case 1: The king is surrounded by obstacles, so it cannot move ― the o
 
 Example case 4: The king can visit all cells of the board.
 */
+#include<bits/stdc++.h>
+using namespace std;
+ 
+#pragma GCC push_options
+#pragma GCC optimize ("unroll-loops")
+ 
+#define watch(x) cout << (#x) << " is " << (x) << "\n"
+#define watch2(x,y) cout <<(#x)<<" is "<<(x)<<" and "<<(#y)<<" is "<<(y)<<"\n"
+#define MAX 100000
+#define pow2(x) ((x)*(x))
+#define ll long long
+#define ld long double
+#define eb emplace_back
+#define pb push_back
+#define pf push_front
+ 
+#define mod 1000000007
+#define clock (clock() * 1000.0 / CLOCKS_PER_SEC)
+ 
+#define mp make_pair
+#define ff first
+#define ss second
+#define null NULL
+ 
+#define all(c) (c).begin(),(c).end()
+#define nl "\n"
+ 
+typedef vector<ll> vl;
+typedef vector< vl > vvl;
+typedef pair< ll,ll> pll;
+typedef map< ll,ll> mll;
+
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
+  ll t;
+  cin >> t;
+  while(t--){
+   ll k;
+   cin>>k;
+   char bd[8][8];
+   bd[0][0]='O';
+   
+   int c=1;
+   int xct=10;
+   int xps=0;
+   
+   for(auto i=0;i<8;i++){
+       for(auto j=0;j<8;j++){
+           if(bd[i][j]=='O')
+           continue;
+           if(c<k){
+               bd[i][j]='.';
+               c++;
+           }
+           else if(xps<xct){
+               bd[i][j]='X';
+               xps++;
+           }
+           else {
+               bd[i][j]='.';
+           }
+       }
+   }
+   
+    for(auto i=0;i<8;i++){
+       for(auto j=0;j<8;j++){
+       cout<<bd[i][j];
+       }
+        cout<<"\n";
+    }
+  }
+  
+ return 0;
+ 
+}
+
